@@ -8,6 +8,7 @@ from model.chatbot import Chatbot
 from model.reports import PredictionsReport
 from model.send_mail import CollegeListMailer
 
+
 # Set the title and favicon for the streamlit web application
 st.set_page_config(
     page_title="Jasper",
@@ -120,7 +121,7 @@ def college_predictor():
         st.markdown(hide_table_row_index, unsafe_allow_html=True)
 
         PredictionsReport.college_predictions_report(predicted_colleges)
-        
+
         CollegeListMailer.send_college_predictions_mail(user_input_full_name, user_input_email_id)
 
         # predicted_colleges = predicted_colleges.drop("College Name", axis = 'columns')
