@@ -18,6 +18,28 @@ st.set_page_config(
     page_icon="assets/favicon/jasper-favicon.jpg",
 )
 
+# Remove the extra padding from the top margin of the web app
+st.markdown(
+    """
+        <style>
+               .block-container {
+                    padding-top: 1rem;
+					padding-bottom: 1rem;
+                }
+        </style>
+        """,
+    unsafe_allow_html=True,
+)
+
+# Hide streamlit's default image expanders from app interface
+hide_img_fs = """
+<style>
+button[title="View fullscreen"]{
+    visibility: hidden;}
+</style>
+"""
+st.markdown(hide_img_fs, unsafe_allow_html=True)  # Allow HTML parsing
+
 # Hide the streamlit menu and default footer from the app's front-end
 HIDE_MENU_STYLE = """
 <style>
