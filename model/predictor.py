@@ -145,4 +145,4 @@ class CollegePredictor:
             "Expected Last Rank", axis="columns"
         )
 
-        return last_rank_dataframe
+        return last_rank_dataframe.dropna()
